@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="../public/style/main.css">
+  <title>Frontend Mentor | Time tracking dashboard</title>
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+
+    <section class="account_profile">
+
+      <article id="account">
+        <img src="../public/images/image-jeremy.png" alt="Profile picture">
+        <h2>Report for</h2>
+        <h1>Jeremy Robson</h1>
+      </article>
+
+      <article class="time">
+        <p id="daily-button" class="buttonOff" name="timebutton">Daily</p>
+        <p id="weekly-button" class="buttonOff" name="timebutton">Weekly</p>
+        <p id="monthly-button" class="buttonOff" name="timebutton">Monthly</p>
+      </article>
+    </section>
+
+
+    <section class="categories_box">
+
+      <article id="block_1" class="categorie">
+        <span class="backgroundfix">
+          <img src="../public/images/icon-work.svg" alt="travel bag in background">
+        </span>
+
+        <div class="content_box">
+          <img src="../public/images/icon-ellipsis.svg" alt="Menu picture">
+          <h3>Work</h3>
+          <h2 id="work-currenttime"></h2>
+          <h4 id="work-lasttime"></h4>
+        </div>
+      </article>
+
+      <article id="block_2" class="categorie">
+        <span class="backgroundfix">
+          <img src="../public/images/icon-play.svg" alt="gamepad in background">
+        </span>
+
+        <div class="content_box">
+          <img src="../public/images/icon-ellipsis.svg" alt="Menu picture">
+          <h3>Play</h3>
+          <h2 id="play-currenttime"></h2>
+          <h4 id="play-lasttime"></h4>
+        </div>
+      </article>
+
+      <article id="block_3" class="categorie">
+        <span class="backgroundfix">
+          <img src="../public/images/icon-study.svg" alt="book  in background">
+        </span>
+
+        <div class="content_box">
+          <img src="../public/images/icon-ellipsis.svg" alt="Menu picture">
+          <h3>Study</h3>
+          <h2 id="study-currenttime"></h2>
+          <h4 id="study-lasttime"></h4>
+        </div>
+      </article>
+
+      <article id="block_4" class="categorie">
+        <span class="backgroundfix">
+          <img src="../public/images/icon-exercise.svg" alt="people mark in background">
+        </span>
+
+        <div class="content_box">
+          <img src="../public/images/icon-ellipsis.svg" alt="Menu picture">
+          <h3>Exercise</h3>
+          <h2 id="exercise-currenttime"></h2>
+          <h4 id="exercise-lasttime"></h4>
+        </div>
+      </article>
+
+      <article id="block_5" class="categorie">
+        <span class="backgroundfix">
+          <img src="../public/images/icon-social.svg" alt="chat pic in background">
+        </span>
+
+        <div class="content_box">
+          <img src="../public/images/icon-ellipsis.svg" alt="Menu picture">
+          <h3>Social</h3>
+          <h2 id="social-currenttime"></h2>
+          <h4 id="social-lasttime"></h4>
+        </div>
+      </article>
+
+      <article id="block_6" class="categorie">
+        <span class="backgroundfix">
+          <img src="../public/images/icon-self-care.svg" alt="heart in background">
+        </span>
+
+        <div class="content_box">
+          <img src="../public/images/icon-ellipsis.svg" alt="Menu picture">
+          <h3>Self care</h3>
+          <h2 id="selfcare-currenttime"></h2>
+          <h4 id="selfcare-lasttime"></h4>
+        </div>
+      </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Adam Troszczyński</a>.
+  </div>
+</body>
+<script type="module" src="../src/index.js"></script>
+<script src="../src/focus effect.js"></script>
+
+</html>

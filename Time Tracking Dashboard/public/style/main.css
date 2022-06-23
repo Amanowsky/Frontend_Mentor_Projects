@@ -1,0 +1,359 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    Font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    background: hsl(226, 43%, 10%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    overflow-x: hidden;
+}
+
+main {
+    width: 75vw;
+    height: 58vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account_profile {
+    height: 100%;
+    width: 30%;
+    background: hsl(235, 46%, 20%);
+    margin: 25px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#account {
+    width: 100%;
+    height: 70%;
+    padding: 25px;
+    border-radius: 20px;
+    background: hsl(246, 80%, 60%);
+}
+
+#account img {
+    height: 80px;
+    border: 3px solid white;
+    border-radius: 50%;
+}
+
+#account h2 {
+    font-size: 15px;
+    font-weight: 300;
+    color: hsl(236, 100%, 87%);
+    margin-top: 40px;
+    text-align: left;
+}
+
+#account h1 {
+    text-align: left;
+    font-size: 50px;
+    font-weight: 300;
+}
+
+.time {
+    height: 30%;
+    padding: 20px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.time p {
+    width: fit-content;
+    cursor: pointer;
+}
+
+.buttonOff {
+    transition: .5s;
+    color: hsl(235, 45%, 61%);
+}
+
+.buttonPush {
+    transition: .5s;
+    transform: scale(1.1);
+    color: white;
+}
+
+.categories_box {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3%;
+    z-index: 1;
+}
+
+.categorie {
+    height: calc(50% - 2%);
+    width: calc(33.33% - 20px);
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 0;
+}
+
+.backgroundfix {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -0%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.categorie img {
+    position: absolute;
+    left: 60%;
+    top: -6%;
+    z-index: 0;
+}
+
+#block_1 {
+    background: hsl(15, 100%, 70%);
+}
+
+#block_2 {
+    background: hsl(195, 74%, 62%);
+}
+
+#block_3 {
+    background: hsl(348, 100%, 68%);
+}
+
+#block_4 {
+    background: hsl(145, 58%, 55%);
+}
+
+#block_5 {
+    background: hsl(264, 64%, 52%);
+}
+
+#block_6 {
+    background: hsl(43, 84%, 65%);
+}
+
+.content_box {
+    z-index: 1;
+    width: 103%;
+    height: 85%;
+    background: hsl(235, 46%, 20%);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 0 -1 -1 -1;
+    cursor: pointer;
+    position: relative;
+}
+
+.content_box:hover {
+    background: hsl(236, 44%, 33%);
+}
+
+.content_box h3 {
+    margin-bottom: 30px;
+}
+
+.content_box h2 {
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.content_box h4 {
+    font-size: 16px;
+    font-weight: 300;
+    color: hsl(235, 45%, 61%);
+}
+
+.content_box img {
+    position: absolute;
+    top: 20%;
+    left: 80%;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1920px) {
+    #account img {
+        height: 100px;
+    }
+}
+
+@media screen and (max-width:1440px) {
+    #account img {
+        height: 80px;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    main {
+        width: 90vw;
+    }
+
+    #account h1 {
+        font-size: 45px;
+    }
+
+    .content_box h2 {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    main {
+        width: 95vw;
+    }
+
+    .account_profile {
+        margin-left: 0;
+    }
+
+    .time {
+        justify-content: space-around;
+        align-items: center;
+        margin: 0;
+    }
+
+    .content_box {
+        padding: 20px;
+    }
+
+    .content_box h2 {
+        font-size: 30px;
+    }
+
+    .content_box h3 {
+        font-size: 20px;
+    }
+
+    .content_box h4 {
+        margin-top: 20px;
+        font-size: 15px;
+    }
+
+    .content_box img {
+        top: 15%;
+    }
+}
+
+@media screen and (max-width:425px) {
+    main {
+        flex-direction: column;
+    }
+
+    .account_profile {
+        width: 80%;
+        height: 40%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    #account {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    #account h1 {
+        margin-left: 15px;
+        margin-top: 10px;
+        font-size: 25px;
+    }
+
+    #account h2 {
+        position: absolute;
+        left: 38%;
+        top: 0%;
+    }
+
+    .time {
+        flex-direction: row;
+    }
+
+    .categories_box {
+        width: 80%;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .categorie {
+        width: 100%;
+        height: 30%;
+    }
+
+    .content_box {
+        position: relative;
+        padding: 25px;
+    }
+
+    .content_box h2 {
+        font-size: 30px;
+        margin-top: 15px;
+        margin-bottom: 25px;
+    }
+
+    .content_box h3 {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .content_box h4 {
+        position: absolute;
+        top: 58%;
+        left: 60%;
+        margin: 0;
+    }
+
+    .content_box img {
+        top: 25%;
+        left: 85%;
+    }
+
+    .attribution {
+        position: absolute;
+        top: 5%;
+    }
+}
+
+@media screen and (max-width:375px) {
+    main {
+        width: 95%;
+    }
+
+    .account_profile {
+        width: 95%;
+    }
+
+    .categories_box {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width:320px) {
+    #account h1 {
+        font-size: 20px;
+    }
+
+    #account h2 {
+        left: 42%;
+    }
+}
