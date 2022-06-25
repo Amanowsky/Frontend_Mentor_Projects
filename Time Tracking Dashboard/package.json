@@ -2,11 +2,10 @@
   "name": "time-tracking-dashboard",
   "version": "1.0.0",
   "description": "Frontend-Mentor challenge",
-  "main": "index.js",
   "scripts": {
     "start": "parcel ./public/index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build"
+    "build": "parcel build ./public/index.html"
   },
   "author": "Adam Troszczynski",
   "license": "ISC",
