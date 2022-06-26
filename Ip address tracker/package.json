@@ -1,0 +1,25 @@
+{
+  "name": "ip-adress-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel ./public/index.html",
+    "build": "parcel build ./public/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "jest": "^28.1.1",
+    "leaflet": "^1.8.0",
+    "parcel": "^2.6.2",
+    "sass": "^1.53.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.2",
+    "buffer": "^6.0.3",
+    "process": "^0.11.10"
+  }
+}

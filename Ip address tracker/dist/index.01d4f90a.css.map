@@ -1,0 +1,1 @@
+{"mappings":"ACKA;;;;AAIA;;;;;;AAMA;;;;ADdA","sources":["src/assets/style/_background.scss","src/assets/style/_base.scss"],"sourcesContent":["@use 'base';\r\n.attribution\r\n{\r\n  background: base.$primary-text-color;\r\n}",null],"names":[],"version":3,"file":"index.01d4f90a.css.map","sourceRoot":"/__parcel_source_root/"}

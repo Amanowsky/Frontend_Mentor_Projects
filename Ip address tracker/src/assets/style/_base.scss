@@ -1,0 +1,27 @@
+
+$primary-text-color:hsl(0, 0%, 17%);
+$secound-text-color:hsl(0, 0%, 59%);
+
+
+html
+{
+    scroll-behavior: smooth;
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    font-family: 'Rubik', sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+input:focus
+{
+    outline: none;
+    text-decoration: none;
+    border: none;
+}
