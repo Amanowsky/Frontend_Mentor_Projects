@@ -33,7 +33,10 @@
         padding: 20px;
         justify-content: space-between;
     }
-
+    @media screen and (max-height: 565px)
+    {
+        padding: 10px;
+    }
     article {
         height: 100%;
         width: 25%;
@@ -146,6 +149,13 @@
             font-size: 1.3rem;
             min-height: max-content;
             margin-top: 5;
+        }
+    }
+    @media screen and (max-height: 565px)
+    {
+        span{
+            font-size: 1.1rem;
+            margin-top: 2px;
         }
     }
 }
