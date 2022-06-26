@@ -47,7 +47,7 @@ function setMap(x,y) {
     }).addTo(map);
     //Set custom icon on marker
     var myIcon = L.icon({
-        iconUrl: 'http://localhost:1234/icon-location.c3032bc6.svg',
+        iconUrl: 'https://62b8d3546d2aa1104f0cb399--glittery-hotteok-f2f12d.netlify.app/icon-location.c6b5a81e.svg',
         iconSize: [35, 45],
         iconAnchor: [22, 94],
         popupAnchor: [-3, -76],
