@@ -1,0 +1,19 @@
+@import 'base';
+
+
+#content{
+    height: 75%;
+    width: 86%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    article{
+        width: 20.25%;
+        height: 44%;
+        background: $lightmode-secound;
+        @include shadow;
+        border-radius: 10px;
+        
+    }
+}
