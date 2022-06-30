@@ -14,7 +14,6 @@ async function getData() {
     } catch (error) {
         console.log(error);
     }
-    window.addEventListener('scroll', infinityScroll);
     readData(12);
 }
 
@@ -23,7 +22,7 @@ getData();
 
 function readData(k) {
     for (var i = 0; i < k; i++) {
-
+        window.addEventListener('scroll', infinityScroll);
         const newArticle = document.createElement('article');
         newArticle.dataset.index = index;
         newArticle.dataset.continent = response.data[i].continents;
@@ -59,7 +58,9 @@ function capitalize(str) {
 let marks = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ' ']
 let upMarks = [];
 marks.forEach((element) => {upMarks.push(element.toUpperCase())});
+
 function searchCountry() {
+    regiontext.innerText = "Filter by Region";
     let value = input.value;
     if (value == "") { return contentbox.innerHTML="" , index = 0 , readData(12);};
     marks.forEach((element) => {
@@ -87,8 +88,8 @@ function searchCountry() {
 
 function showResult(country)
 {
+    window.removeEventListener('scroll', infinityScroll);
     for (var i = 0; i < country.length; i++) {
-
         const newArticle = document.createElement('article');
         newArticle.dataset.continent = response.data[i].continents;
         newArticle.dataset.country = response.data[i].name.common;
@@ -100,6 +101,35 @@ function showResult(country)
             country[i].capital + "</span></h3>";
     }
 }
+
+
+const regionBtns = document.getElementsByName('region');
+const regiontext = document.getElementById('regiontext');
+function filterByRegion(e)
+{
+    let target = e.target;
+    let continent = target.textContent;
+    let country = [];
+    response.data.forEach((element) => {
+       
+            if(element.region == continent) return country.push(element);
+               
+        }
+    )
+    
+    contentbox.innerHTML = "";
+    regiontext.innerText = continent;
+    showResult(country);
+    
+}
+    for(var i=0;i<regionBtns.length;i++)
+    {
+        regionBtns[i].addEventListener('click',(e) => {
+            filterByRegion(e);
+        })
+        
+    }
+
 const input = document.getElementById('input');
 input.addEventListener('keyup', searchCountry);
 

@@ -15,20 +15,20 @@
 </head>
 
 <body>
-    <footer>
+    <header>
         <h1>Where in the world?</h1>
         <button><img src="/src/assets/img/darkmode.svg">Dark Mode</button>
-    </footer>
+    </header>
     <section id="inputs">
         <div class="search"><img src="/src/assets/img/search.png"><input type="text"
                 placeholder="Search for a country..." id="input"></div>
-        <div class="regions"><button id="regionFilter">Filter by Region<img
+        <div id="regions" class="regions"><button id="regionFilter"><span id="regiontext">Filter by Region</span><img
                     src="/src/assets/img/arrow-down.svg"></button>
             <div id="regionlistDiv" class="regionlist-off">
                 <h2 name="region">Africa</h2>
-                <h2 name="region">America</h2>
+                <h2 name="region">Americas</h2>
                 <h2 name="region">Asia</h2>
-                <h2 name="region">Europa</h2>
+                <h2 name="region">Europe</h2>
                 <h2 name="region">Oceania</h2>
             </div>
         </div>
@@ -40,7 +40,8 @@
     </section>
 
 </body>
-<script src="/src/index.js"></script>
 <script src="/src/api.js" type="module"></script>
+<script src="/src/index.js"></script>
+
 
 </html>

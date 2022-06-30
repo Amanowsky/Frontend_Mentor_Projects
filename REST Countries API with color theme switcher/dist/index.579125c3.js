@@ -1,5 +1,5 @@
 const regionFilter = document.getElementById("regionFilter");
-const regions = document.getElementsByName("region");
+const regions = document.getElementById("regions");
 const regionlistDiv = document.getElementById("regionlistDiv");
 const regionsName = [
     "africa",
@@ -12,7 +12,6 @@ function showRegionsList() {
     regionlistDiv.classList.toggle("regionlist-off");
     regionlistDiv.classList.toggle("regionlist-on");
 }
-regionFilter.addEventListener("click", showRegionsList);
-regionFilter.addEventListener("blur", showRegionsList);
+regions.addEventListener("click", showRegionsList);
 
 //# sourceMappingURL=index.579125c3.js.map

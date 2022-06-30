@@ -2,7 +2,7 @@
 
 
 #inputs {
-    width: 86%;
+    width: 81%;
     height: 15vh;
     display: flex;
     justify-content: space-between;
@@ -11,7 +11,7 @@
 
     .search {
         height: 40%;
-        width: 40%;
+        width: 35%;
         background: $lightmode-secound;
         @include shadow;
         border-radius: 10px;
@@ -30,7 +30,7 @@
             outline: none;
             border: none;   
             height: 60%;
-            width: 50%;
+            width: 90%;
             font-size: 1rem; 
             font-weight: 600;  
         }     

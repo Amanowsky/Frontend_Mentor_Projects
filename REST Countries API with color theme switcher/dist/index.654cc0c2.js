@@ -543,16 +543,16 @@ async function getData() {
     } catch (error) {
         console.log(error);
     }
-    window.addEventListener("scroll", infinityScroll);
     readData(12);
 }
 getData();
 function readData(k) {
-    for(var i = 0; i < k; i++){
+    for(var i1 = 0; i1 < k; i1++){
+        window.addEventListener("scroll", infinityScroll);
         const newArticle = document.createElement("article");
         newArticle.dataset.index = index;
-        newArticle.dataset.continent = response.data[i].continents;
-        newArticle.dataset.country = response.data[i].name.common;
+        newArticle.dataset.continent = response.data[i1].continents;
+        newArticle.dataset.country = response.data[i1].name.common;
         contentbox.appendChild(newArticle);
         newArticle.innerHTML = "<div class='imgflag' style='background-image: url(" + response.data[index].flags.svg + ")'> </div><div class='headers'><h2>" + response.data[index].name.common + "</h2><h3>Population: <span>" + response.data[index].population + "</span></h3><h3>Region: <span>" + response.data[index].region + "</span></h3><h3>Capital: <span>" + response.data[index].capital + "</span></h3>";
         index++;
@@ -607,6 +607,7 @@ marks.forEach((element)=>{
     upMarks.push(element.toUpperCase());
 });
 function searchCountry() {
+    regiontext.innerText = "Filter by Region";
     let value = input.value;
     if (value == "") return contentbox.innerHTML = "", index = 0, readData(12);
     marks.forEach((element)=>{
@@ -620,8 +621,8 @@ function searchCountry() {
     let length = name.length;
     let country = [];
     response.data.forEach((element)=>{
-        for(var i = 0; i < length; i++){
-            if (element.name.common[i] != name[i]) return 0;
+        for(var i2 = 0; i2 < length; i2++){
+            if (element.name.common[i2] != name[i2]) return 0;
         }
         return country.push(element);
     });
@@ -629,14 +630,31 @@ function searchCountry() {
     showResult(country);
 }
 function showResult(country) {
-    for(var i = 0; i < country.length; i++){
+    window.removeEventListener("scroll", infinityScroll);
+    for(var i3 = 0; i3 < country.length; i3++){
         const newArticle = document.createElement("article");
-        newArticle.dataset.continent = response.data[i].continents;
-        newArticle.dataset.country = response.data[i].name.common;
+        newArticle.dataset.continent = response.data[i3].continents;
+        newArticle.dataset.country = response.data[i3].name.common;
         contentbox.appendChild(newArticle);
-        newArticle.innerHTML = "<div class='imgflag' style='background-image: url(" + country[i].flags.svg + ")'> </div><div class='headers'><h2>" + country[i].name.common + "</h2><h3>Population: <span>" + country[i].population + "</span></h3><h3>Region: <span>" + country[i].region + "</span></h3><h3>Capital: <span>" + country[i].capital + "</span></h3>";
+        newArticle.innerHTML = "<div class='imgflag' style='background-image: url(" + country[i3].flags.svg + ")'> </div><div class='headers'><h2>" + country[i3].name.common + "</h2><h3>Population: <span>" + country[i3].population + "</span></h3><h3>Region: <span>" + country[i3].region + "</span></h3><h3>Capital: <span>" + country[i3].capital + "</span></h3>";
     }
 }
+const regionBtns = document.getElementsByName("region");
+const regiontext = document.getElementById("regiontext");
+function filterByRegion(e) {
+    let target = e.target;
+    let continent = target.textContent;
+    let country = [];
+    response.data.forEach((element)=>{
+        if (element.region == continent) return country.push(element);
+    });
+    contentbox.innerHTML = "";
+    regiontext.innerText = continent;
+    showResult(country);
+}
+for(var i = 0; i < regionBtns.length; i++)regionBtns[i].addEventListener("click", (e)=>{
+    filterByRegion(e);
+});
 const input = document.getElementById("input");
 input.addEventListener("keyup", searchCountry); /* <article>
             <div class="imgflag"></div>
