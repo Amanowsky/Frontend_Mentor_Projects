@@ -1,0 +1,2 @@
+const regionFilter=document.getElementById("regionFilter"),regions=document.getElementsByName("region"),regionlistDiv=document.getElementById("regionlistDiv"),regionsName=["africa","america","asia","europa","oceania"];function showRegionsList(){regionlistDiv.classList.toggle("regionlist-off"),regionlistDiv.classList.toggle("regionlist-on")}regionFilter.addEventListener("click",showRegionsList);
+//# sourceMappingURL=index.c2def4f8.js.map

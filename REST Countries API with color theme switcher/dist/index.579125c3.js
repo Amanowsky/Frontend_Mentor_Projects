@@ -13,5 +13,6 @@ function showRegionsList() {
     regionlistDiv.classList.toggle("regionlist-on");
 }
 regionFilter.addEventListener("click", showRegionsList);
+regionFilter.addEventListener("blur", showRegionsList);
 
 //# sourceMappingURL=index.579125c3.js.map

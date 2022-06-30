@@ -9,3 +9,4 @@ function showRegionsList(){
 }
 
 regionFilter.addEventListener("click",showRegionsList);
+regionFilter.addEventListener('blur',showRegionsList);
