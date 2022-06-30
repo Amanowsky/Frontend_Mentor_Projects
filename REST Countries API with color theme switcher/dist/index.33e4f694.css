@@ -120,7 +120,7 @@ footer button img {
   height: max-content;
   width: 86%;
   flex-wrap: wrap;
-  place-content: space-between;
+  align-content: space-between;
   gap: 3vw;
   margin: auto auto 20px;
   display: flex;

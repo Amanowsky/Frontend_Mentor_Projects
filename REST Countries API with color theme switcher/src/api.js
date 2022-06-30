@@ -2,7 +2,7 @@
 const axios = require('axios');
 let response;
 let index = 0;
-
+const contentbox = document.getElementById('content');
 
 
 
@@ -14,53 +14,94 @@ async function getData() {
     } catch (error) {
         console.log(error);
     }
-    window.addEventListener('scroll',test);
-   readData(12);
+    window.addEventListener('scroll', infinityScroll);
+    readData(12);
 }
-    
 
-   getData();
+
+getData();
 
 function readData(k) {
-        const contentbox = document.getElementById('content');
     for (var i = 0; i < k; i++) {
-        
+
         const newArticle = document.createElement('article');
         newArticle.dataset.index = index;
         newArticle.dataset.continent = response.data[i].continents;
         newArticle.dataset.country = response.data[i].name.common;
-        
+
 
         contentbox.appendChild(newArticle);
-        newArticle.innerHTML = "<div class='imgflag' style='background-image: url(" + response.data[index].flags.svg + ")'> </div><div class='headers'><h2>" +  response.data[index].name.common +
-        "</h2><h3>Population: <span>" + response.data[index].population + "</span></h3><h3>Region: <span>"+ response.data[index].region + "</span></h3><h3>Capital: <span>" +
-        response.data[index].capital + "</span></h3>";
+        newArticle.innerHTML = "<div class='imgflag' style='background-image: url(" + response.data[index].flags.svg + ")'> </div><div class='headers'><h2>" + response.data[index].name.common +
+            "</h2><h3>Population: <span>" + response.data[index].population + "</span></h3><h3>Region: <span>" + response.data[index].region + "</span></h3><h3>Capital: <span>" +
+            response.data[index].capital + "</span></h3>";
         index++;
     }
 }
 
-function test()
-{
-    if(index>249)
-    {
-        window.removeEventListener('scroll',test);
+function infinityScroll() {
+    if (index > 249) {
+        window.removeEventListener('scroll', infinityScroll);
         readData(1);
         return 0;
     }
     var top = window.scrollY;
     var height = document.body.offsetHeight - window.innerHeight;
     var diffrent = Number(height) / Number(top);
-    console.log(top,height);
-    if(Number(top)>Number(height))
-    {
+    console.log(top, height);
+    if (Number(top) > Number(height)) {
         readData(12);
     }
-    
-    
 }
 
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+let marks = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ' ']
+let upMarks = [];
+marks.forEach((element) => {upMarks.push(element.toUpperCase())});
+function searchCountry() {
+    let value = input.value;
+    if (value == "") { return contentbox.innerHTML="" , index = 0 , readData(12);};
+    marks.forEach((element) => {
+        if(element == value[0]) return contentbox.innerHTML = "";
+    })
+    upMarks.forEach((element) => {
+        if(element == value[0]) return contentbox.innerHTML = "";
+    })
+    let name = capitalize(value);
+    console.log(name);
+    let length = name.length;
+    let country = [];
+    response.data.forEach((element) => {
+        for (var i = 0; i < length; i++) {
+            if (element.name.common[i] != name[i]) {
+                return 0;
+            }
+            
+        }
+        return country.push(element);
+    })
+    console.log(country);
+    showResult(country);
+}
+
+function showResult(country)
+{
+    for (var i = 0; i < country.length; i++) {
+
+        const newArticle = document.createElement('article');
+        newArticle.dataset.continent = response.data[i].continents;
+        newArticle.dataset.country = response.data[i].name.common;
 
 
+        contentbox.appendChild(newArticle);
+        newArticle.innerHTML = "<div class='imgflag' style='background-image: url(" + country[i].flags.svg + ")'> </div><div class='headers'><h2>" + country[i].name.common +
+            "</h2><h3>Population: <span>" + country[i].population + "</span></h3><h3>Region: <span>" + country[i].region + "</span></h3><h3>Capital: <span>" +
+            country[i].capital + "</span></h3>";
+    }
+}
+const input = document.getElementById('input');
+input.addEventListener('keyup', searchCountry);
 
 
 /* <article>
