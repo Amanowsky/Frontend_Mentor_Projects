@@ -15,8 +15,9 @@ html{
 body
 {
     width: 100vw;
-    height: 100vh;
+    height: max-content;
     background-color: $lightmode-background;
+    overflow-x: hidden;
 }
 button{
     display: flex;

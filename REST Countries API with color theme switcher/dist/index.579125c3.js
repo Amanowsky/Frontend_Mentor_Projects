@@ -9,7 +9,6 @@ const regionsName = [
     "oceania"
 ];
 function showRegionsList() {
-    console.log("test");
     regionlistDiv.classList.toggle("regionlist-off");
     regionlistDiv.classList.toggle("regionlist-on");
 }

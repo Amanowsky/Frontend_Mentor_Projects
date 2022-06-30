@@ -1,6 +1,6 @@
 footer {
   width: 100%;
-  height: 7%;
+  height: 8vh;
   background: #fff;
   border-bottom: 1px solid #202c371c;
   justify-content: space-between;
@@ -117,20 +117,56 @@ footer button img {
 }
 
 #content {
-  height: 75%;
+  height: max-content;
   width: 86%;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin: auto;
+  place-content: space-between;
+  gap: 3vw;
+  margin: auto auto 20px;
   display: flex;
 }
 
 #content article {
-  width: 20.25%;
-  height: 44%;
+  width: 18vw;
+  height: 40vh;
+  cursor: pointer;
   background: #fff;
   border-radius: 10px;
+  flex-direction: column;
+  display: flex;
+  overflow: hidden;
   box-shadow: 0 0 12px -8px #42445a;
+}
+
+#content article .imgflag {
+  height: 40%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+#content article .headers {
+  width: 100%;
+  height: 60%;
+  padding: 5% 0% 5% 8%;
+}
+
+#content article .headers h2 {
+  margin-bottom: 5%;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+#content article .headers h3 {
+  margin-bottom: 2%;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+#content article .headers span {
+  color: #858585;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 html {
@@ -146,8 +182,9 @@ html {
 
 body {
   width: 100vw;
-  height: 100vh;
+  height: max-content;
   background-color: #fafafa;
+  overflow-x: hidden;
 }
 
 button {
